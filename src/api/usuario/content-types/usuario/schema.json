@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios",
+  "info": {
+    "singularName": "usuario",
+    "pluralName": "usuarios",
+    "displayName": "Usuario"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "Documento": {
+      "type": "biginteger"
+    },
+    "Correo": {
+      "type": "email"
+    },
+    "Calle": {
+      "type": "string"
+    },
+    "NumeroCalle": {
+      "type": "string"
+    },
+    "Municipio": {
+      "type": "string"
+    },
+    "Ubicacion": {
+      "type": "string"
+    },
+    "MedioDePago": {
+      "type": "string"
+    },
+    "ordens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::orden.orden",
+      "mappedBy": "usuario"
+    }
+  }
+}

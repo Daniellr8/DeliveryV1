@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "repartidors",
+  "info": {
+    "singularName": "repartidor",
+    "pluralName": "repartidors",
+    "displayName": "Repartidor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "Telefono": {
+      "type": "biginteger"
+    },
+    "Correo": {
+      "type": "email"
+    },
+    "Documento": {
+      "type": "biginteger"
+    },
+    "Vehiculo": {
+      "type": "string"
+    },
+    "Ubicacion": {
+      "type": "string"
+    },
+    "CuentaPago": {
+      "type": "biginteger"
+    },
+    "ordens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::orden.orden",
+      "mappedBy": "repartidor"
+    }
+  }
+}

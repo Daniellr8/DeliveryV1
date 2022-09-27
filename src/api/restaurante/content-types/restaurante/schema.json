@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurantes",
+  "info": {
+    "singularName": "restaurante",
+    "pluralName": "restaurantes",
+    "displayName": "Restaurante"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "Correo": {
+      "type": "email"
+    },
+    "NIT": {
+      "type": "biginteger"
+    },
+    "Telefono": {
+      "type": "biginteger"
+    },
+    "Calle": {
+      "type": "string"
+    },
+    "NumeroCalle": {
+      "type": "string"
+    },
+    "Municipio": {
+      "type": "string"
+    },
+    "Ubicacion": {
+      "type": "string"
+    },
+    "CuentaDeposito": {
+      "type": "string"
+    },
+    "menus": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::menu.menu",
+      "mappedBy": "restaurante"
+    },
+    "ordens": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::orden.orden",
+      "mappedBy": "restaurantes"
+    }
+  }
+}

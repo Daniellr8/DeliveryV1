@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordens",
+  "info": {
+    "singularName": "orden",
+    "pluralName": "ordens",
+    "displayName": "Orden",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FechaSolicitud": {
+      "type": "datetime"
+    },
+    "FechaFinalizado": {
+      "type": "datetime"
+    },
+    "Costo": {
+      "type": "decimal"
+    },
+    "NComprobantePago": {
+      "type": "biginteger"
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::usuario.usuario",
+      "inversedBy": "ordens"
+    },
+    "repartidor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::repartidor.repartidor",
+      "inversedBy": "ordens"
+    },
+    "restaurantes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::restaurante.restaurante",
+      "inversedBy": "ordens"
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::producto.producto",
+      "mappedBy": "orden"
+    },
+    "estado": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::estado.estado"
+    }
+  }
+}
