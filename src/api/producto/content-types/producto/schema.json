@@ -4,7 +4,8 @@
   "info": {
     "singularName": "producto",
     "pluralName": "productos",
-    "displayName": "Producto"
+    "displayName": "Producto",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,18 +22,22 @@
       "type": "string"
     },
     "Imagen": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "orden": {
+    "Nombre": {
+      "type": "string"
+    },
+    "ordens": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::orden.orden",
       "inversedBy": "productos"
     }

@@ -13,16 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "FechaSolicitud": {
-      "type": "datetime"
+      "type": "datetime",
+      "pluginOptions": {}
     },
     "FechaFinalizado": {
-      "type": "datetime"
+      "type": "datetime",
+      "pluginOptions": {}
     },
     "Costo": {
-      "type": "decimal"
+      "type": "decimal",
+      "pluginOptions": {}
     },
     "NComprobantePago": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "pluginOptions": {}
     },
     "usuario": {
       "type": "relation",
@@ -32,9 +36,9 @@
     },
     "repartidor": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "api::repartidor.repartidor",
-      "inversedBy": "ordens"
+      "inversedBy": "orden"
     },
     "restaurantes": {
       "type": "relation",
@@ -42,16 +46,16 @@
       "target": "api::restaurante.restaurante",
       "inversedBy": "ordens"
     },
-    "productos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::producto.producto",
-      "mappedBy": "orden"
-    },
     "estado": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::estado.estado"
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::producto.producto",
+      "mappedBy": "ordens"
     }
   }
 }

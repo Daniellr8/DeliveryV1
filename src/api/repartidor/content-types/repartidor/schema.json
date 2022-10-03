@@ -32,9 +32,9 @@
     "CuentaPago": {
       "type": "biginteger"
     },
-    "ordens": {
+    "orden": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::orden.orden",
       "mappedBy": "repartidor"
     }

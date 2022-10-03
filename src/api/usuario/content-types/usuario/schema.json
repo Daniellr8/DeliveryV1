@@ -4,7 +4,8 @@
   "info": {
     "singularName": "usuario",
     "pluralName": "usuarios",
-    "displayName": "Usuario"
+    "displayName": "Usuario",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,6 +41,9 @@
       "relation": "oneToMany",
       "target": "api::orden.orden",
       "mappedBy": "usuario"
+    },
+    "Telefono": {
+      "type": "biginteger"
     }
   }
 }

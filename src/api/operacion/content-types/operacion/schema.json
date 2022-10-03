@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "operacions",
+  "info": {
+    "singularName": "operacion",
+    "pluralName": "operacions",
+    "displayName": "Operacion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "p1": {
+      "type": "integer"
+    },
+    "p2": {
+      "type": "integer"
+    }
+  }
+}
